@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Introduction to OWASP Juice Shop</title>
+		<title> OWASP Juice Shop</title>
 
-		<meta name="description" content="OWASP Cornucopia">
+		<meta name="description" content="OWASP Juice Shop">
 		<meta name="author" content="Matthias Altmann">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,6 +34,7 @@
 			.slides section { color: #1a6091 }
 			.slides a { color: #134674}
 		</style>
+
 	</head>
 
 	<body>
@@ -103,7 +104,7 @@
 						<p style="float:left;width:33.33333%;text-align:right">Storage Backend</p>
 					</div>
 					<div style="clear: both;"></div>
-					<img src="imgs/architecture.png" width="100%">
+					<img src="imgs/architecture.png" width="80%">
 				</section>
 
 				<section data-transition="zoom">
@@ -119,7 +120,7 @@
 							<p class="fragment">External OAuth Provider</p>
 						</div>
 						<div style="float:right;width:50%;text-align:right">
-							<img src="imgs/frontend.png" width="90%">
+							<img src="imgs/frontend.png" width="80%">
 						</div>
 					</div>
 					<div style="clear: both;"></div>
@@ -156,7 +157,7 @@
 							<p class="fragment">(Mars DB)</p>
 						</div>
 						<div style="float:right;width:50%;text-align:right">
-							<img src="imgs/storage.png" width="90%">
+							<img src="imgs/storage.png" width="80%">
 						</div>
 					</div>
 					<div style="clear: both;"></div>
@@ -213,5 +214,46 @@
 
 		</script>
 
+		<style type="text/css">
+			/* 1. Style header/footer <div> so they are positioned as desired. */
+			#header-left {
+				position: absolute;
+				top: 0%;
+				left: 40%;
+			}
+			#header-right {
+				position: absolute;
+				top: 0%;
+				right: 0%;
+			}
+			#footer-left {
+				position: absolute;
+				bottom: 0%;
+				left: 0%;
+			}
+		</style>
+
+		<!-- 2. Create hidden header/footer <div> -->
+		<div id="hidden" style="display:none;">
+			<div id="header">
+				<div id="header-left"><img src="imgs/header_transparent.png" width="50%%"></div>
+				<div id="header-right"></div>
+				<div id="footer-left"></div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+			// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+			var header = $('#header').html();
+			if ( window.location.search.match( /print-pdf/gi ) ) {
+				Reveal.addEventListener( 'ready', function( event ) {
+					$('.slide-background').append(header);
+				});
+			}
+			else {
+				$('div.reveal').append(header);
+			}
+		</script>
 	</body>
 </html>

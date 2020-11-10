@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Introduction to OWASP Cornucopia</title>
+		<title>OWASP Cornucopia</title>
 
 		<meta name="description" content="OWASP Cornucopia">
 		<meta name="author" content="Matthias Altmann">
@@ -84,19 +84,12 @@
                 <section data-transition="zoom">
                     <p>Proposals</p>
                     <p>Valid for all players?</p>
-                    <div class="fragment">
-                    <p>Current player gets</p>
-                    <p class="fragment grow">+1</p>
-                    </div>
+                    <p class="fragment">If not discard card</p>
                 </section>
 
                 <section data-transition="zoom">
                     <p>A winner every round</p>
                     <p>Order A, K, Q, 10 ... 2</p>
-                    <div class="fragment">
-                    <p>Winner scores</p>
-                    <p class="fragment grow">+1</p>
-                    </div>
                 </section>
 
                 <section data-transition="zoom">
@@ -127,7 +120,7 @@
                 </section>
 
                 <section>
-                    <h1>Scoresheet</h1>
+                    <h1>Notes</h1>
                 </section>
 
                 <section data-transition="zoom">
@@ -199,6 +192,46 @@
 			});
 
 		</script>
+        <style type="text/css">
+            /* 1. Style header/footer <div> so they are positioned as desired. */
+            #header-left {
+                position: absolute;
+                top: 0%;
+                left: 40%;
+            }
+            #header-right {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+            }
+            #footer-left {
+                position: absolute;
+                bottom: 0%;
+                left: 0%;
+            }
+        </style>
 
+        <!-- 2. Create hidden header/footer <div> -->
+        <div id="hidden" style="display:none;">
+            <div id="header">
+                <div id="header-left"><img src="imgs/header_transparent.png" width="50%%"></div>
+                <div id="header-right"></div>
+                <div id="footer-left"></div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript">
+            // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+            var header = $('#header').html();
+            if ( window.location.search.match( /print-pdf/gi ) ) {
+                Reveal.addEventListener( 'ready', function( event ) {
+                    $('.slide-background').append(header);
+                });
+            }
+            else {
+                $('div.reveal').append(header);
+            }
+        </script>
 	</body>
 </html>
