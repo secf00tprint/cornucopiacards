@@ -25,6 +25,18 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 
         <link rel="stylesheet" href="css/blur.css">
+
+        <style>
+            .slides h1 { color: #1a6091 }
+            .slides h2 { color: #1a6091 }
+            .slides h3 { color: #1a6091 }
+            .slides h4 { color: #1a6091 }
+            .slides h5 { color: #1a6091 }
+            .slides h6 { color: #1a6091 }
+            .slides section { color: #1a6091 }
+            .slides a { color: #134674}
+        </style>
+
 	</head>
 
 	<body>
@@ -34,10 +46,10 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-                <section data-background-image="imgs/corn_transparent.png" data-background-size="30%" data-transition="zoom">
+                <section data-background-image="imgs/corn_transparent.png" data-background-size="30%" data-transition="zoom" data-background-color="#000000">
 				</section>
 
-                <section data-transition="zoom">
+                <section data-transition="zoom" class="atd">
                     <h1>Background</h1>
                 </section>
 
@@ -45,19 +57,19 @@
                     <p>Cornucopia: Heavily based on EoP</p>
                 </section>
 
-                <section data-transition="zoom">
-                    <h2>Focus</h2>
+                <section data-transition="zoom" class="atd">
+                    <h2  class="atd">Focus</h2>
                     <p>Primarily for Webapplication-Analysis</p>
                 </section>
 
 				<section data-transition="zoom">
-                    <h1>Gameplay</h1>
-                    <img src="imgs/gameplay.png" width="50%">
+                    <h1>Recap: Gameplay</h1>
+                    <img src="imgs/gameplay_dark.png" width="50%">
 				</section>
 
                 <section data-transition="zoom">
                     <p>Choose first player by chance</p>
-                    <img src="imgs/number1.png" width="20%">
+                    <img src="imgs/number1_dark.png" width="20%">
                 </section>
 
                 <section data-transition="zoom">
@@ -74,7 +86,7 @@
                     <p>Valid for all players?</p>
                     <div class="fragment">
                     <p>Current player gets</p>
-                    <p class="fragment grow highlight-green">+1</p>
+                    <p class="fragment grow">+1</p>
                     </div>
                 </section>
 
@@ -83,7 +95,7 @@
                     <p>Order A, K, Q, 10 ... 2</p>
                     <div class="fragment">
                     <p>Winner scores</p>
-                    <p class="fragment grow highlight-green">+1</p>
+                    <p class="fragment grow">+1</p>
                     </div>
                 </section>
 
@@ -164,8 +176,8 @@
 			// https://revealjs.com/initialization/
 			Reveal.initialize({
 				// Parallax background image
-	            parallaxBackgroundImage: 'imgs/fractal-1812490_gray_dark.png', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
-
+	            // parallaxBackgroundImage: 'imgs/fractal-1812490_gray_dark.png', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+                parallaxBackgroundImage: 'imgs/background.png',
 	            // Parallax background size
 	            parallaxBackgroundSize: '1920x 1402px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
